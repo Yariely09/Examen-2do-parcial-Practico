@@ -1,6 +1,6 @@
 # Mi examen: Sistema de Inventario 
 
-Este proyecto es una práctica de programación donde desarrollé un sistema para organizar productos. La idea era crear una base sólida para que una tienda pueda registrar lo que vende y calcular automáticamente los impuestos, ya que no todos los productos pagan lo mismo.
+Este proyecto es un examen de programación donde desarrollé un sistema para organizar productos. La idea era crear una base sólida para que una tienda pueda registrar lo que vende y calcular automáticamente los impuestos, ya que no todos los productos pagan lo mismo.
 
 ## Explicación de lo que hice
 
@@ -25,10 +25,15 @@ Así, cuando el programa ve una Laptop, sabe que tiene que multiplicar por 0.18,
 Cuando corres el programa, el Main crea los productos y los imprime tal cual se pidió. Por ejemplo, con una laptop la salida es esta:
 
 Producto: Laptop 
+
 Codigo: P1001 
+
 Precio: 45000 
+
 Cantidad: 5 
+
 Garantia: 12 meses 
+
 Impuesto: 8100
 
 
