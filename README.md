@@ -1,4 +1,4 @@
-# Mi examen: Sistema de Inventario para Tienda
+# Mi examen: Sistema de Inventario 
 
 Este proyecto es una práctica de programación donde desarrollé un sistema para organizar productos. La idea era crear una base sólida para que una tienda pueda registrar lo que vende y calcular automáticamente los impuestos, ya que no todos los productos pagan lo mismo.
 
