@@ -1,34 +1,34 @@
-# Sistema de Gestión de Inventario
+# Mi examen: Sistema de Inventario para Tienda
 
-Este es un caso práctico desarrollado en **C#** para demostrar el uso de la **Programación Orientada a Objetos (POO)**. El sistema permite gestionar diferentes tipos de productos aplicando reglas de negocio específicas para el cálculo de impuestos.
+Este proyecto es una práctica de programación donde desarrollé un sistema para organizar productos. La idea era crear una base sólida para que una tienda pueda registrar lo que vende y calcular automáticamente los impuestos, ya que no todos los productos pagan lo mismo.
 
-## 🚀 Requerimientos del Sistema
+## Explicación de lo que hice
 
-El sistema cumple con los siguientes pilares de POO:
+Para que el código no fuera un desastre, lo organicé usando clases y objetos. Aquí te cuento cómo lo estructuré:
 
-* **Encapsulación**: Todos los atributos de la clase `Producto` son privados y se acceden mediante propiedades públicas con bloques `get` y `set`.
-* **Herencia**: Se utiliza una clase base `Producto` de la cual heredan `ProductoElectronico` y `ProductoAlimento`.
-* **Polimorfismo**: El método `CalcularImpuesto()` es virtual en la clase base y se redefine (`override`) en las clases derivadas según la tasa correspondiente.
+### La clase principal (Producto)
+Esta es la madre de todas las clases en mi código. Aquí definí lo básico: nombre, código, precio y cantidad. Lo más importante aquí fue la **encapsulación**. Puse los datos en privado para que nadie los toque directamente, y creé propiedades con "get" y "set" para poder leerlos y cambiarlos de forma segura. También puse un método para mostrar la información del producto de golpe y no estar escribiendo "Console.WriteLine" a cada rato en el Main.
 
-## 📊 Reglas de Impuestos
+### Los tipos de productos (Herencia)
+Como una laptop no es lo mismo que un cartón de leche, usé la **herencia**. Hice dos clases nuevas que "heredan" todo lo de Producto:
+- **ProductoElectronico:** Esta clase ya tiene nombre y precio porque los hereda, pero le añadí el tiempo de garantía porque eso es clave en electrónicos.
+- **ProductoAlimento:** A esta le añadí la fecha de vencimiento, que es lo más importante cuando vendes comida.
 
-| Tipo de Producto | Tasa de Impuesto (ITBIS) | Atributo Adicional |
-| :--- | :--- | :--- |
-| **Electrónico** | 18% | Garantía (Meses) |
-| **Alimento** | 8% | Fecha de Vencimiento |
+### El cálculo de impuestos (Polimorfismo)
+Esta fue la parte más interesante. El requerimiento decía que los electrónicos pagan 18% de ITBIS y los alimentos solo el 8%. Para no hacer un código lleno de "if" y "else", usé **polimorfismo**:
+1. En la clase base puse el método `CalcularImpuesto` como "virtual".
+2. En las clases hijas usé "override" para escribir la fórmula real. 
+Así, cuando el programa ve una Laptop, sabe que tiene que multiplicar por 0.18, y si ve un alimento, usa el 0.08 automáticamente.
 
-## 💻 Ejemplo de Código (Main)
+## ¿Cómo se ve el resultado?
 
-La implementación en el punto de entrada principal crea objetos específicos y muestra la información formateada:
+Cuando corres el programa, el Main crea los productos y los imprime tal cual se pidió. Por ejemplo, con una laptop la salida es esta:
 
-```csharp
-// Ejemplo de creación de un producto electrónico
-ProductoElectronico laptop = new ProductoElectronico("Laptop", "P1001", 45000, 5, 12);
-
-// Salida esperada
 Producto: Laptop 
 Codigo: P1001 
 Precio: 45000 
 Cantidad: 5 
 Garantia: 12 meses 
 Impuesto: 8100
+
+
