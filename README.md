@@ -36,4 +36,6 @@ Garantia: 12 meses
 
 Impuesto: 8100
 
+<img width="777" height="235" alt="image" src="https://github.com/user-attachments/assets/1d8d2d62-1ef1-43ea-a244-21341c2a53f0" />
+
 
